@@ -1,0 +1,14 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "Learning Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Brad Trott",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.5.3"
+  }
+}
