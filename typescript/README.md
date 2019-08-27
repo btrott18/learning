@@ -324,33 +324,36 @@ abstract class Parent {
 
 ### General syntax:
 ```
-	function add(number1: number, number2: number): number {
-		return number1 + number2;
-	}
+function add(number1: number, number2: number): number {
+	return number1 + number2;
+}
 ```
 
 ### Default values
 ```
-	function add(number1: number, number2: number = 0): number {
-		return number1 + number2;
-	}
-	
-	add(1, 2); 	//3
-	add(1); 	//1
+function add(number1: number, number2: number = 0): number {
+	return number1 + number2;
+}
+
+add(1, 2); 	//3
+add(1); 	//1
 ```
 
 ### Optional values
 ```
-	function add(number1: number, number2?: number): number {
-		if(number2) {
-			return number1 + number2;	
-		}
-		return number1;
+function add(number1: number, number2?: number): number {
+	if(number2) {
+		return number1 + number2;	
 	}
-	
-	add(1, 2); 	//3
-	add(1); 	//1
+	return number1;
+}
+
+add(1, 2); 	//3
+add(1); 	//1
 ```
+
+
+
 
 Notes sourced from:  https://www.typescriptlang.org/docs/home.html
 
