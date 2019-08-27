@@ -60,22 +60,22 @@ let v: number = "Some string"; //compiler error
 
 Available types are:
 
-boolean
-number
-string
-array
+* boolean 
+* number 
+* string 
+* array 
 	> `let arr: number[] = [1,2,3];` or `let arr: list<number> = [1,2,3];`
-tuple
+* tuple 
 	> `let myTuple: [string, number] = [1,2];` 
 	> Can be destructured using `let [first, second] = myTuple;`
 	> still need to be accessed by the index, however compiler/runtime know the `type` that the data should be in each index.
 
-enum
+* enum 
 	> `enum foods {pizza, cereal, nachos}`
 	> `foods.pizza` or `foods[0] //pizza`
 	> TODO:  Read up on enums
 
-any -- Dynamic, allows you to switch types.  Works as an opt-out of type-checking at compile time.
+* any -- Dynamic, allows you to switch types.  Works as an opt-out of type-checking at compile time. 
 ```
 	let something: any = true;
 	something = "I don't actually know";
@@ -318,6 +318,38 @@ abstract class Parent {
 		return val1 + val2;
 	}
 }
+```
+
+## Functions
+
+### General syntax:
+```
+	function add(number1: number, number2: number): number {
+		return number1 + number2;
+	}
+```
+
+### Default values
+```
+	function add(number1: number, number2: number = 0): number {
+		return number1 + number2;
+	}
+	
+	add(1, 2); 	//3
+	add(1); 	//1
+```
+
+### Optional values
+```
+	function add(number1: number, number2?: number): number {
+		if(number2) {
+			return number1 + number2;	
+		}
+		return number1;
+	}
+	
+	add(1, 2); 	//3
+	add(1); 	//1
 ```
 
 Notes sourced from:  https://www.typescriptlang.org/docs/home.html
