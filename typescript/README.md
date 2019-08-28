@@ -323,14 +323,14 @@ abstract class Parent {
 ## Functions
 
 ### General syntax:
-```
+```typescript
 function add(number1: number, number2: number): number {
 	return number1 + number2;
 }
 ```
 
 ### Default values
-```
+```typescript
 function add(number1: number, number2: number = 0): number {
 	return number1 + number2;
 }
@@ -340,7 +340,7 @@ add(1); 	//1
 ```
 
 ### Optional values
-```
+```typescript
 function add(number1: number, number2?: number): number {
 	if(number2) {
 		return number1 + number2;	
@@ -352,7 +352,15 @@ add(1, 2); 	//3
 add(1); 	//1
 ```
 
-
+It is okay to have a param with a defaulted value, followed by a param without a defaulted value, however in order to not pass a value for the first param, you must specify `undefined` for the value of the first param.
+```typescript
+function add(number1 = 0, number2: number): number {
+	return number1 + number2;
+}
+add(1); 	//error
+add(undefined, 1); //1
+add(1, 2); 	//3
+```
 
 
 Notes sourced from:  https://www.typescriptlang.org/docs/home.html
